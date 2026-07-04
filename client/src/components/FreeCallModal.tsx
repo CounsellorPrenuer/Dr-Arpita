@@ -9,7 +9,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useMutation } from "@tanstack/react-query";
-import { apiRequest, queryClient } from "@/lib/queryClient";
+import { workerPost } from "@/lib/workerApi";
 import { useToast } from "@/hooks/use-toast";
 
 const freeCallSchema = z.object({
@@ -46,17 +46,16 @@ export default function FreeCallModal({ open, onOpenChange }: FreeCallModalProps
 
   const bookCallMutation = useMutation({
     mutationFn: async (data: FreeCallFormData) => {
-      return apiRequest("POST", "/api/bookings", {
+      return workerPost("/api/forms/submit", {
         name: data.name,
-        email: "freecall@skillzy.com", // Placeholder email for free calls
+        email: "freecall@skillzy.in",
         phone: data.phone,
-        packageType: "free-call",
-        packageName: "Free Discovery Call",
-        price: "0",
+        message: `Free discovery call request. Background: ${data.background}`,
+        plan_id: "free-call",
+        serviceType: data.background,
       });
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["/api/bookings"] });
       toast({
         title: "Booking Confirmed!",
         description: "We'll call you within 4 hours. Check your phone!",
