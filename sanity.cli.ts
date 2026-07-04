@@ -5,5 +5,8 @@ export default defineCliConfig({
     projectId: "ww1z7kff",
     dataset: "production",
   },
-  studioHost: "Dr-Arpita",
+  studioHost: "dr-arpita",
+  deployment: {
+    appId: "nm9i60x7ks5oil79c3kpzhaw",
+  },
 });

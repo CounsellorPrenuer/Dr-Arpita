@@ -1,7 +1,7 @@
 export const PROJECT_ID = "dr-arpita";
 export const SANITY_PROJECT_ID = "ww1z7kff";
 export const SANITY_DATASET = "production";
-export const SANITY_STUDIO_HOST = "Dr-Arpita";
+export const SANITY_STUDIO_HOST = "dr-arpita";
 export const GITHUB_PAGES_REPO_NAME = "Dr-Arpita";
 export const SITE_BASE = "/Dr-Arpita";
 export const WORKER_URL = "https://multi-tenant-platform.gauravgoodreads.workers.dev";
