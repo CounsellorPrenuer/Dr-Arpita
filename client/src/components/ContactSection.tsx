@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, Linkedin, Facebook, Youtube, Instagram, Send, MapPin, Sparkles, ArrowRight } from "lucide-react";
-import { apiRequest } from "@/lib/queryClient";
+import { workerPost } from "@/lib/workerApi";
 
 export default function ContactSection() {
   const { toast } = useToast();
@@ -41,7 +41,13 @@ export default function ContactSection() {
     setIsSubmitting(true);
 
     try {
-      await apiRequest("POST", "/api/contact", formData);
+      await workerPost("/api/forms/submit", {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        message: formData.message,
+        plan_id: "contact",
+      });
       
       toast({
         title: "Thank you for reaching out!",
