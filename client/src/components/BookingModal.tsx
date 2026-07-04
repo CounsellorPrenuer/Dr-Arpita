@@ -180,7 +180,7 @@ export default function BookingModal({ open, onOpenChange, planId, title, catego
           <div>
             <Label htmlFor="checkout-coupon">Coupon code</Label>
             <div className="flex gap-2">
-              <Input id="checkout-coupon" value={coupon} onChange={(event) => setCoupon(event.target.value.toUpperCase())} placeholder="DEEPA10" />
+              <Input id="checkout-coupon" value={coupon} onChange={(event) => setCoupon(event.target.value.toUpperCase())} placeholder="Coupon code" />
               <Button type="button" variant="outline" onClick={applyCoupon} disabled={isApplying}>
                 {isApplying ? <Loader2 className="w-4 h-4 animate-spin" /> : "Apply"}
               </Button>
