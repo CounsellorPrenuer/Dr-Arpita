@@ -95,6 +95,9 @@ async function loadCms(): Promise<CmsContent> {
 }
 
 export function fetchCms(): Promise<CmsContent> {
-  if (!cmsRequest) cmsRequest = loadCms();
-  return cmsRequest;
+  return loadCms();
+}
+
+export function resetCmsCache() {
+  cmsRequest = null;
 }

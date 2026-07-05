@@ -64,7 +64,7 @@ export default function PackagesSection() {
           }
         />
 
-        <p className="text-center text-sm text-slate-400 mt-12 bg-slate-800/30 backdrop-blur-sm rounded-full px-8 py-4 inline-block mx-auto w-full max-w-2xl border border-slate-700">
+        <p className="block text-center text-sm text-slate-400 mt-12 mx-auto max-w-2xl px-6 py-4 bg-slate-800/30 backdrop-blur-sm rounded-full border border-slate-700">
           All prices in INR. Secure payment by Razorpay.
         </p>
       </div>
